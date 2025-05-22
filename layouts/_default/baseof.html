@@ -28,7 +28,7 @@
   {{ "<!-- Reactivity for the sidebar -->" | safeHTML }}
   <label for="sidebar-checkbox" class="sidebar-toggle"></label>
   <script src='{{ (resources.Get `js/sidebar.js`).RelPermalink }}'></script>
-  {{ partial "cookie_consent.html" . -}}
+  {{- if .Site.Params.cookies -}}{{ partial "cookie_consent.html" . -}}{{- end -}}
 </body>
 
 </html>

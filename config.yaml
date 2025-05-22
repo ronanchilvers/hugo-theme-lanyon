@@ -44,6 +44,19 @@ params:
     # Reverse the position of the sidebar (from left to right side)
     reverse: false
 
+  cookies:
+    palette:
+      popup:
+        background: '#aa0000'
+        text: '#ffdddd'
+      button:
+        background: transparent
+        text: '#ffdddd'
+        border: '#ff0000'
+    position: bottom-right
+    content:
+      message: "This website uses services that may set up cookies. Ad blockers may limit the site functionality. The 3rd party services in use are: AddToAny (share content button), Disqus (add comment), Google Analitycs (analytics)."
+
   # Inject AddToAny to most pages for easy share of your content.
   addtoany: true
 
