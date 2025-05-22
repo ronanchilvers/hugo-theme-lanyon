@@ -37,6 +37,12 @@
     </p>
     {{- end -}}
     {{- end -}}
+    {{- if .Site.Params.license -}}
+    {{ with .Site.Params.license -}}
+    <p>{{- if .text -}}{{ .text }}&nbsp;{{- end -}}<a href="{{ .url }}">{{ .name }}</a></p>
+    {{- end -}}
+    {{- else -}}
     <p>&copy; {{ time.Now.Year }}. All rights reserved.</p>
+    {{- end -}}
   </div>
 </div>
