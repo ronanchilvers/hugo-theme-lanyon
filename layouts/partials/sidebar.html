@@ -22,9 +22,11 @@
       {{- .Title -}}
     </a>
     {{- end }}
+    {{- if .Site.Params.github -}}
     {{ "<!-- Link to the project.-->" | safeHTML}}
     <a class="sidebar-nav-item" href="{{ .Site.Params.github.repo }}">GitHub project</a>
     <span class="sidebar-nav-item">Currently v{{ .Site.Params.github.version }}</span>
+    {{- end -}}
   </nav>
   <div class="sidebar-item">
     <p>
