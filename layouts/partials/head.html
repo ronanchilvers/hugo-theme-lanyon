@@ -30,4 +30,7 @@
   {{ $cookie_css_resource := resources.GetRemote
   "https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" }}
   <link rel="stylesheet" type="text/css" href="{{ $cookie_css_resource.RelPermalink }}" />
+{{- range .Site.Params.stylesheets -}}
+  <link rel="stylesheet" href="{{ . | absURL }}">
+{{- end -}}
 </head>

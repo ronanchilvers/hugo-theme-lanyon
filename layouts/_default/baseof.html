@@ -31,6 +31,9 @@
   <label for="sidebar-checkbox" class="sidebar-toggle"></label>
   <script src='{{ (resources.Get `js/sidebar.js`).RelPermalink }}'></script>
   {{- if .Site.Params.cookies -}}{{ partial "cookie_consent.html" . -}}{{- end -}}
+  {{ range .Site.Params.scripts -}}
+  <script type="text/javascript" src="{{ . | absURL }}"></script>
+  {{- end }}
 </body>
 
 </html>

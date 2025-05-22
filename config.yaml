@@ -25,6 +25,9 @@ params:
     repo:    https://github.com/ItachiSan/hugo-theme-lanyon
     version: 1.1.0
 
+  stylesheets: []
+  scripts: []
+
   # Theme customization
   theme:
     # You can customize the them color via the correct code, listed below:
