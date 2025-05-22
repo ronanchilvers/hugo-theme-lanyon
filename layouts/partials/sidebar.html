@@ -29,10 +29,14 @@
     {{- end -}}
   </nav>
   <div class="sidebar-item">
+    {{- if .Site.Params.author -}}
+    {{- with .Site.Params.author -}}
     <p>
-      Made by: <a href="{{  .Site.Params.author.url }}">{{ .Site.Params.author.name }}</a>
-      (<a href="mailto:{{ .Site.Params.author.email}}">e-mail</a>)
+      <a href="{{ .url }}">{{ .name }}</a>
+      {{- if .email -}}(<a href="mailto:{{ .email}}">e-mail</a>){{- end -}}
     </p>
+    {{- end -}}
+    {{- end -}}
     <p>&copy; {{ time.Now.Year }}. All rights reserved.</p>
   </div>
 </div>
