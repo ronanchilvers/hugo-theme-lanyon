@@ -28,6 +28,10 @@ params:
   stylesheets: []
   scripts: []
 
+  posts:
+    show_related: true
+    show_tags: bottom
+
   # Theme customization
   theme:
     # You can customize the them color via the correct code, listed below:

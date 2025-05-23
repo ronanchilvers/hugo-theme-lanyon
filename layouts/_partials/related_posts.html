@@ -1,0 +1,21 @@
+{{- block "related_posts_main" . -}}
+<aside class="related">
+    <h3 class="related_posts--title">Related Posts</h3>
+    <ul class="related-posts">
+    {{ with .Site.RegularPages.Related . | first 3 -}}
+        {{ range . -}}
+        <li>
+        {{- block "related_title" . -}}
+            <h3>
+                <a href="{{ .RelPermalink }}">
+                    {{- .Title -}}
+                    <small>{{- .Date | dateFormat ":date_short" -}}</small>
+                </a>
+            </h3>
+        {{- end -}}
+        </li>
+        {{ end -}}
+    {{ end -}}
+    </ul>
+</aside>
+{{- end -}}

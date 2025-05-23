@@ -1,0 +1,35 @@
+{{ define "main" }}
+{{- /* Handle posts and pages differently */ -}}
+{{ $section := $.Section }}
+{{ $isPost := eq $section "posts" }}
+{{ if $isPost }}
+{{- if eq $.Site.Params.posts.show_tags "top" }}
+{{ partial "post_tags.html" . }}
+{{ end -}}
+<div class="post">
+  <h1 class="post-title">{{- block "post_title" . }}{{ .Title }}{{ end -}}</h1>
+  <span class="post-date">{{ .Date | dateFormat ":date_full" }}</span>
+  {{ .Content }}
+</div>
+{{ else }}
+<div class="page">
+  <h1 class="page-title">{{- block "page_title" . }}{{ .Title }}{{ end -}}</h1>
+  {{ .Content }}
+</div>
+{{ end -}}
+
+{{- partial "addtoany.html" . }}
+{{ if .Site.Config.Services.Disqus.Shortname }}
+<div class="comments">
+  {{ template "_internal/disqus.html" . }}
+</div>
+{{ end }}
+
+{{- if and (eq $.Site.Params.posts.show_tags "bottom") $isPost }}
+{{ partial "post_tags.html" . }}
+{{ end -}}
+
+{{- if and $.Site.Params.posts.show_related $isPost }}
+{{ partial "related_posts.html" . }}
+{{ end -}}
+{{ end -}}
