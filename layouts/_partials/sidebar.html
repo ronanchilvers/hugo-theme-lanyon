@@ -22,7 +22,7 @@
     readme for usage.
     */ -}}
     {{- $currentPage := . -}}
-    {{- $pages := where site.RegularPages "Type" "pages" -}}
+    {{- $pages := where site.RegularPages "Type" "page" -}}
     {{- range $pages.ByTitle }}
     <a class="sidebar-nav-item
       {{- if .Eq $currentPage }} active{{ end -}}" href="{{ .RelPermalink }}">
